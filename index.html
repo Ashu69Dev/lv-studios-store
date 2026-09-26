@@ -318,6 +318,254 @@
             </div>
         </div>
     </div>
+    <section>
+        <!-- Hire A Developer & Team Section -->
+<section id="hire-dev" class="py-20 px-4 max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+        <span class="text-xs font-mono font-bold tracking-widest text-[#00E5FF] uppercase bg-[#00E5FF]/10 border border-[#00E5FF]/20 px-3 py-1 rounded-full">
+            Available For Hire
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold font-rajdhani uppercase text-white mt-4 tracking-wide">
+            Hire A <span class="text-[#0099FF]">Developer</span>
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto mt-2 leading-relaxed">
+            Professional FiveM, RedM & Full-Stack Web Development services tailored for serious RP communities.
+        </p>
+    </div>
+
+    <!-- Meet The Team Cards (Lee & Panther) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-[#0099FF] to-[#00E5FF] flex items-center justify-center font-rajdhani text-2xl font-black text-black">
+                        L
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-rajdhani text-white uppercase tracking-wider">Lee</h3>
+                        <span class="text-xs text-[#00E5FF] font-mono">Lead Core Developer</span>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Specialized in core framework mechanics (Qbox, QBCore, ESX), standalone systems, advanced NUI integration, and high-performance server architecture.
+                </p>
+            </div>
+            <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-white/5">
+                <a href="https://github.com/Ashu69Dev" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition flex items-center gap-1">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <span class="text-slate-700">•</span>
+                <a href="https://youtube.com/@leeverse5m?si=oYjbwpeSyE7QtMgY" target="_blank" class="text-xs font-mono text-red-400 hover:text-red-300 transition flex items-center gap-1">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-md flex flex-col justify-between">
+            <div>
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-[#00E5FF] to-emerald-400 flex items-center justify-center font-rajdhani text-2xl font-black text-black">
+                        P
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-rajdhani text-white uppercase tracking-wider">Panther</h3>
+                        <span class="text-xs text-emerald-400 font-mono">Systems & Optimization Engineer</span>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Focused on system stability, resource resmon optimization (0.00ms targets), database architecture, bug fixing, and custom UI engineering.
+                </p>
+            </div>
+            <div class="flex items-center space-x-3 mt-6 pt-4 border-t border-white/5">
+                <span class="text-xs font-mono text-slate-500">Core Developer • #lee.org1101</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Switching Tabs -->
+    <div class="flex justify-center items-center gap-2 mb-10 overflow-x-auto pb-2">
+        <button onclick="switchServiceTab('fivem')" id="tab-fivem" class="service-tab-btn px-5 py-2 rounded-lg bg-[#0099FF] text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+            FiveM Development
+        </button>
+        <button onclick="switchServiceTab('redm')" id="tab-redm" class="service-tab-btn px-5 py-2 rounded-lg bg-slate-900/80 border border-white/10 text-slate-400 hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+            RedM Development
+        </button>
+        <button onclick="switchServiceTab('web')" id="tab-web" class="service-tab-btn px-5 py-2 rounded-lg bg-slate-900/80 border border-white/10 text-slate-400 hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+            Web & API Services
+        </button>
+    </div>
+
+    <!-- FiveM Pricing Cards -->
+    <div id="services-fivem" class="service-panel grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Weekly -->
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40 flex flex-col justify-between hover:border-[#0099FF]/40 transition">
+            <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00E5FF] bg-[#00E5FF]/10 px-2 py-0.5 rounded">Part-Time Support</span>
+                <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Weekly Hire</h4>
+                <div class="mt-4 mb-6">
+                    <span class="text-3xl font-black font-mono text-white">$40</span>
+                    <span class="text-xs text-slate-400 font-mono"> / week</span>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2.5">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Development on your existing server</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Critical bug fixes & script tuning</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Direct discord ticket communication</li>
+                </ul>
+            </div>
+            <a href="https://discord.gg/pbUQCPapH2" target="_blank" class="mt-8 block text-center py-2.5 rounded-lg border border-[#0099FF]/40 text-[#0099FF] hover:bg-[#0099FF] hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+                Order Weekly Plan
+            </a>
+        </div>
+
+        <!-- Monthly -->
+        <div class="glass-box p-6 rounded-2xl border-2 border-[#0099FF] bg-slate-900/80 flex flex-col justify-between relative shadow-lg shadow-[#0099FF]/10">
+            <span class="absolute -top-3 right-6 bg-[#0099FF] text-white text-[10px] font-mono uppercase font-black px-2.5 py-0.5 rounded-full">Popular Choice</span>
+            <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00E5FF] bg-[#00E5FF]/10 px-2 py-0.5 rounded">Dedicated Support</span>
+                <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Monthly Hire</h4>
+                <div class="mt-4 mb-6">
+                    <span class="text-3xl font-black font-mono text-white">$160</span>
+                    <span class="text-xs text-slate-400 font-mono"> / month</span>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2.5">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#00E5FF]"></i> Up to 3 - 4 hours daily dedication</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#00E5FF]"></i> Sundays off</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#00E5FF]"></i> Continuous feature additions & updates</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-[#00E5FF]"></i> Continuous maintenance & optimization</li>
+                </ul>
+            </div>
+            <a href="https://discord.gg/pbUQCPapH2" target="_blank" class="mt-8 block text-center py-2.5 rounded-lg bg-[#0099FF] text-white hover:bg-[#0088ee] text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+                Order Monthly Plan
+            </a>
+        </div>
+
+        <!-- Full Server Development -->
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40 flex flex-col justify-between hover:border-[#0099FF]/40 transition">
+            <div>
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Complete Setup</span>
+                <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Full Server Build</h4>
+                <div class="mt-4 mb-6">
+                    <span class="text-3xl font-black font-mono text-white">$250 - $270</span>
+                    <span class="text-xs text-slate-400 font-mono"> / one-time</span>
+                </div>
+                <ul class="text-xs text-slate-300 space-y-2.5">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Built from scratch to production ready</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Frameworks: Qbox, QB-Core or ESX</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> vMenu and 5PD configurations included</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Custom tailoring to client requirements</li>
+                </ul>
+            </div>
+            <a href="https://discord.gg/pbUQCPapH2" target="_blank" class="mt-8 block text-center py-2.5 rounded-lg border border-[#0099FF]/40 text-[#0099FF] hover:bg-[#0099FF] hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">
+                Discuss Project Scope
+            </a>
+        </div>
+    </div>
+
+    <!-- RedM Services -->
+    <div id="services-redm" class="service-panel hidden grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40">
+            <span class="text-[10px] font-mono font-bold uppercase text-[#00E5FF]">VORP Core / RedEM:RP</span>
+            <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">RedM Framework Scripting</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Custom script creation, hunting/economy system configuration, horse inventory overhauls, and lore-friendly Wild West roleplay setups.
+            </p>
+            <div class="mt-4 text-xs font-mono text-slate-300">Pricing starts from <strong class="text-white">$35+</strong> (based on scope)</div>
+        </div>
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40">
+            <span class="text-[10px] font-mono font-bold uppercase text-[#00E5FF]">RedM Server Setup</span>
+            <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Full RedM Server Configuration</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Turnkey RedM server built on stable VORP Core with clean UI, jobs, camp mechanics, and verified database optimization.
+            </p>
+            <div class="mt-4 text-xs font-mono text-slate-300">Custom Quote via Discord Ticket</div>
+        </div>
+    </div>
+
+    <!-- Web & API Services -->
+    <div id="services-web" class="service-panel hidden grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40">
+            <span class="text-[10px] font-mono font-bold uppercase text-[#00E5FF]">Landing Pages & Portals</span>
+            <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Custom Community Web Portals</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Cyberpunk/modern responsive websites, custom rules pages, staff portals, and player stat tracking web views.
+            </p>
+            <div class="mt-4 text-xs font-mono text-slate-300">Pricing starts from <strong class="text-white">$50+</strong></div>
+        </div>
+        <div class="glass-box p-6 rounded-2xl border border-white/10 bg-slate-900/40">
+            <span class="text-[10px] font-mono font-bold uppercase text-[#00E5FF]">Discord & Tebex Integration</span>
+            <h4 class="text-xl font-bold font-rajdhani text-white uppercase mt-2">Serverless Backend & Webhooks</h4>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Automated Cloudflare Workers, custom Discord bots linked to FiveM databases, and Tebex checkout integrations.
+            </p>
+            <div class="mt-4 text-xs font-mono text-slate-300">Pricing starts from <strong class="text-white">$30+</strong></div>
+        </div>
+    </div>
+
+    <!-- How To Hire Steps -->
+    <div class="mt-16 glass-box p-8 rounded-2xl border border-white/10 bg-slate-950/80">
+        <div class="text-center max-w-xl mx-auto mb-8">
+            <h3 class="text-xl font-bold font-rajdhani text-white uppercase tracking-wider">How To Hire Us</h3>
+            <p class="text-xs text-slate-400 mt-1">Simple 3-step streamlined onboarding process</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                <span class="w-8 h-8 rounded-full bg-[#0099FF]/20 text-[#0099FF] font-mono font-bold flex items-center justify-center mx-auto mb-3">1</span>
+                <h5 class="text-sm font-bold font-rajdhani text-white uppercase">Join Official Discord</h5>
+                <p class="text-xs text-slate-400 mt-1">Join the community server and head to the ticket category.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                <span class="w-8 h-8 rounded-full bg-[#00E5FF]/20 text-[#00E5FF] font-mono font-bold flex items-center justify-center mx-auto mb-3">2</span>
+                <h5 class="text-sm font-bold font-rajdhani text-white uppercase">Create Developer Ticket</h5>
+                <p class="text-xs text-slate-400 mt-1">Mention your preferred package, server framework, and required features.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold flex items-center justify-center mx-auto mb-3">3</span>
+                <h5 class="text-sm font-bold font-rajdhani text-white uppercase">Direct Discussion & Kickoff</h5>
+                <p class="text-xs text-slate-400 mt-1">Directly speak with Lee or Panther. We plan milestones and start immediately.</p>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-slate-400">
+                Official Support Email: <strong class="text-[#00E5FF]">iamelixir88@gmail.com</strong>
+            </div>
+            <a href="https://discord.gg/pbUQCPapH2" target="_blank" class="px-6 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition flex items-center gap-2">
+                <i class="fab fa-discord"></i> Open Ticket On Discord
+            </a>
+        </div>
+    </div>
+
+    <!-- Client Reviews Section -->
+    <div class="mt-16">
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold font-rajdhani uppercase text-white tracking-wide">Client Testimonials</h3>
+            <p class="text-xs text-slate-400 mt-1">What server owners say about working with us</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-box p-5 rounded-xl border border-white/10 bg-slate-900/50">
+                <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+                <p class="text-xs text-slate-300 italic mb-4">"Lee and Panther completely fixed our severe server desync and custom Qbox inventory issues. Professional, responsive, and reliable."</p>
+                <span class="text-[11px] font-rajdhani font-bold text-white block uppercase">Vortex Roleplay</span>
+                <span class="text-[10px] font-mono text-slate-500">Qbox Community Owner</span>
+            </div>
+            <div class="glass-box p-5 rounded-xl border border-white/10 bg-slate-900/50">
+                <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+                <p class="text-xs text-slate-300 italic mb-4">"Hired them for full server development. Got delivered clean 0.00ms resmon scripts, clean NUI, and complete documentation."</p>
+                <span class="text-[11px] font-rajdhani font-bold text-white block uppercase">Nexus City RP</span>
+                <span class="text-[10px] font-mono text-slate-500">FiveM Server Director</span>
+            </div>
+            <div class="glass-box p-5 rounded-xl border border-white/10 bg-slate-900/50">
+                <div class="flex text-amber-400 text-xs mb-2">★★★★★</div>
+                <p class="text-xs text-slate-300 italic mb-4">"The monthly hire option is a steal. Constant updates, quick fixes within hours, and very clear communication in tickets."</p>
+                <span class="text-[11px] font-rajdhani font-bold text-white block uppercase">Aero Life RP</span>
+                <span class="text-[10px] font-mono text-slate-500">Monthly Contract Client</span>
+            </div>
+        </div>
+    </div>
+</section>
+    </section>
 
     <!-- Multi-Column Cyber Footer -->
     <footer class="border-t border-white/5 pt-16 pb-8 bg-[#04060A]/80 backdrop-blur-md relative z-10 text-xs">
