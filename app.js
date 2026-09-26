@@ -230,3 +230,32 @@ document.getElementById('policyModal').addEventListener('click', (e) => {
 
 // Initial run
 renderScripts(scriptsData);
+
+async function triggerCheckout(packageId) {
+    const buyBtn = document.getElementById('modalBuyLink');
+    const originalText = buyBtn.innerText;
+    buyBtn.innerText = "Connecting to FiveM / Tebex...";
+    buyBtn.style.pointerEvents = "none";
+
+    try {
+        const response = await fetch('/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ packageId: packageId })
+        });
+
+        const data = await response.json();
+
+        if (data.checkoutUrl) {
+            window.location.href = data.checkoutUrl;
+        } else {
+            alert("Checkout generation failed. Please try again or reach out on Discord.");
+            buyBtn.innerText = originalText;
+            buyBtn.style.pointerEvents = "auto";
+        }
+    } catch (e) {
+        console.error(e);
+        buyBtn.innerText = originalText;
+        buyBtn.style.pointerEvents = "auto";
+    }
+}
