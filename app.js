@@ -155,17 +155,10 @@ function openModal(id) {
     document.getElementById('modalVideo').href = item.videoUrl;
 
     const buyBtn = document.getElementById('modalBuyLink');
-
-    if (item.packageId) {
-        buyBtn.href = "javascript:void(0);";
-        buyBtn.onclick = (e) => {
-            e.preventDefault();
-            triggerCheckout(item.packageId);
-        };
-    } else {
-        buyBtn.href = item.tebexUrl || "https://lee-verse.tebex.io";
-        buyBtn.onclick = null;
-    }
+    buyBtn.innerText = item.isFree ? "DOWNLOAD FREE" : "GET SCRIPT";
+    buyBtn.href = item.tebexUrl;
+    buyBtn.target = "_blank";
+    buyBtn.onclick = null; // Purana API event handler clear
 
     document.getElementById('detailModal').classList.remove('hidden');
 }
