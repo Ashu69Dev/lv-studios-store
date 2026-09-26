@@ -54,7 +54,7 @@ const scriptsData = [
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553312941426876546/nametag.png?ex=6ab8cae8&is=6ab77968&hm=b03b8e5b73fece972f5c8fedc306bf59f48d107109c7076058c598a0a804e2e2&",
         description: "This system displays player names along with their server ID above their character, making player identification easy while keeping the roleplay environment immersive and minimalistic. The script also includes a real-time typing indicator, so when a player is typing in chat, a small indicator appears above their nametag. This adds a more interactive and realistic experience for text-based roleplay servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
-        tebexUrl: "https://lee-verse.tebex.io/package/919478"
+        tebexUrl: "https://lee-verse.tebex.io/package/7329365"
     }
 ];
 
