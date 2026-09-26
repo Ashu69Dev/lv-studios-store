@@ -2,15 +2,16 @@
 const scriptsData = [
     {
         id: 1,
-        title: "Advanced Banking & ATMs",
-        framework: "qbcore",
+        title: "Modern Pawnshop",
+        framework: "qbcore & qbox",
         type: "Escrow",
         resmon: "0.00ms",
         price: "$19.99",
         isFree: false,
-        dependencies: "ox_lib, qb-core",
+        dependencies: "ox_lib, qb-core, qbox",
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
-        description: "Modern NUI banking system featuring society accounts, PIN authorization, personal loans, and full webhook auditing.",
+        description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target.Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow.Perfect for realistic economy based RP servers.",
+                     
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io"
     },
