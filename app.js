@@ -6,7 +6,7 @@ const scriptsData = [
         framework: "qbcore & qbox",
         type: "Escrow",
         resmon: "0.00ms",
-        price: "$19.99",
+        price: "$8.00",
         isFree: false,
         dependencies: "ox_lib, qb-core, qbox",
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
