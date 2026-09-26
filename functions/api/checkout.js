@@ -18,23 +18,29 @@ export async function onRequestPost(context) {
             });
         }
 
-        // Tebex Basic Auth: Username is Private Key, Password is empty
-        const authHeader = `Basic ${btoa(env.TEBEX_PRIVATE_KEY.trim() + ":")}`;
+        const projectId = env.TEBEX_PROJECT_ID || "1574102";
+        const privateKey = env.TEBEX_PRIVATE_KEY ? env.TEBEX_PRIVATE_KEY.trim() : "";
 
-        // 1. Create Basket with Tebex Headless Checkout API
+        if (!privateKey) {
+            return new Response(JSON.stringify({ 
+                error: "Missing TEBEX_PRIVATE_KEY in Cloudflare Environment Variables" 
+            }), {
+                status: 500,
+                headers: corsHeaders
+            });
+        }
+
+        // Tebex Basket Creation Request
         const basketRes = await fetch("https://checkout.tebex.io/api/baskets", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": authHeader
+                "Authorization": `Basic ${btoa(projectId + ":" + privateKey)}`
             },
             body: JSON.stringify({
                 complete_url: "https://lv-studios-store.pages.dev/?status=success",
-                cancel_url: "https://lv-studios-store.pages.dev/?status=cancel",
-                custom: {
-                    project_id: env.TEBEX_PROJECT_ID || "1574102"
-                }
+                cancel_url: "https://lv-studios-store.pages.dev/?status=cancel"
             })
         });
 
@@ -51,15 +57,17 @@ export async function onRequestPost(context) {
             });
         }
 
-        // 2. Add Package to Basket
+        // Add Package to Basket
         const addRes = await fetch(`https://checkout.tebex.io/api/baskets/${basketIdent}/packages`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": authHeader
+                "Authorization": `Basic ${btoa(projectId + ":" + privateKey)}`
             },
-            body: JSON.stringify({ package_id: Number(packageId) })
+            body: JSON.stringify({
+                package_id: Number(packageId)
+            })
         });
 
         const addData = await addRes.json();
