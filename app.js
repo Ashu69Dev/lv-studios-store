@@ -17,15 +17,15 @@ const scriptsData = [
     },
     {
         id: 2,
-        title: "Qbox Inventory & HUD",
-        framework: "qbox",
+        title: "LV-Oxy | Premium Oxy Run Systemp",
+        framework: "qbox, qbcore",
         type: "Escrow",
         resmon: "0.00ms",
-        price: "$24.99",
+        price: "$12.00",
         isFree: false,
-        dependencies: "qbx_core, ox_lib",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
-        description: "Custom designed inventory interface built natively for Qbox framework with smooth drag & drop mechanics.",
+        dependencies: "qb-core, qbox",
+        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553318097430257735/system.png?ex=6ab8cfb5&is=6ab77e35&hm=7d26f35a9bd30c54668d64e90a9b30dfc557045c66b0d5b539f20cbbc6b14879&",
+        description: "LV-Oxy is a premium-style illegal oxy delivery system built for Qbox & QBCore servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io"
     },
@@ -57,20 +57,7 @@ const scriptsData = [
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io"
     },
-    {
-        id: 5,
-        title: "Minimalist Car Hud Speedo",
-        framework: "standalone",
-        type: "Open Source",
-        resmon: "0.00ms",
-        price: "$0.00",
-        isFree: true,
-        dependencies: "None (Standalone)",
-        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
-        description: "Completely free open-source vehicle dashboard with fuel gauge, RPM indicator, and seatbelt sound effects.",
-        videoUrl: "https://www.youtube.com/@LeeVerse5m",
-        tebexUrl: "https://lee-verse.tebex.io"
-    }
+   
 ];
 
 let activeFilter = 'all';
