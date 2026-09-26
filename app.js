@@ -308,3 +308,28 @@ async function triggerCheckout(packageId) {
 }
 // Initial run
 renderScripts(scriptsData);
+// Hire Dev Category Tab Switcher
+function switchServiceTab(tabName) {
+    // Hide all service panels
+    document.querySelectorAll('.service-panel').forEach(panel => {
+        panel.classList.add('hidden');
+        panel.classList.remove('grid');
+    });
+
+    // Reset button states
+    document.querySelectorAll('.service-tab-btn').forEach(btn => {
+        btn.className = "service-tab-btn px-5 py-2 rounded-lg bg-slate-900/80 border border-white/10 text-slate-400 hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition";
+    });
+
+    // Activate selected panel & button
+    const targetPanel = document.getElementById(`services-${tabName}`);
+    const targetBtn = document.getElementById(`tab-${tabName}`);
+
+    if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+        targetPanel.classList.add('grid');
+    }
+    if (targetBtn) {
+        targetBtn.className = "service-tab-btn px-5 py-2 rounded-lg bg-[#0099FF] text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition";
+    }
+}
