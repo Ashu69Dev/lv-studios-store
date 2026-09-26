@@ -9,7 +9,7 @@ const scriptsData = [
         price: "$19.99",
         isFree: false,
         dependencies: "ox_lib, qb-core",
-        image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
+        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
         description: "Modern NUI banking system featuring society accounts, PIN authorization, personal loans, and full webhook auditing.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io"
