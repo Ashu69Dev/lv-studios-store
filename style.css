@@ -17,6 +17,9 @@ body {
 }
 #partner {
     background-image: url("LEE152.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /* Ambient Floating Shapes */
