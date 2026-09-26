@@ -10,14 +10,13 @@ const scriptsData = [
         isFree: false,
         dependencies: "ox_lib, qb-core, qbox",
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
-        description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target.Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow.Perfect for realistic economy based RP servers.",
-                     
+        description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target. Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow. Perfect for realistic economy based RP servers.",
         videoUrl: "https://youtu.be/q6XdlNKYLm4",
         tebexUrl: "https://lee-verse.tebex.io"
     },
     {
         id: 2,
-        title: "LV-Oxy | Premium Oxy Run Systemp",
+        title: "LV-Oxy | Premium Oxy Run System",
         framework: "qbox & qbcore",
         type: "Escrow",
         resmon: "0.00ms",
@@ -53,11 +52,10 @@ const scriptsData = [
         isFree: false,
         dependencies: "No framework needed",
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553312941426876546/nametag.png?ex=6ab8cae8&is=6ab77968&hm=b03b8e5b73fece972f5c8fedc306bf59f48d107109c7076058c598a0a804e2e2&",
-        description: "This system displays player names along with their server ID above their character, making player identification easy while keeping the roleplay environment immersive and minimalistic.The script also includes a real-time typing indicator, so when a player is typing in chat, a small indicator appears above their nametag. This adds a more interactive and realistic experience for text-based roleplay servers.",
+        description: "This system displays player names along with their server ID above their character, making player identification easy while keeping the roleplay environment immersive and minimalistic. The script also includes a real-time typing indicator, so when a player is typing in chat, a small indicator appears above their nametag. This adds a more interactive and realistic experience for text-based roleplay servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
-        packageId: 919478,
-    },
-   
+        packageId: 919478
+    }
 ];
 
 let activeFilter = 'all';
@@ -66,7 +64,10 @@ let activeFilter = 'all';
 function renderScripts(items) {
     const grid = document.getElementById('scriptsGrid');
     const countElem = document.getElementById('scriptCount');
-    countElem.innerText = `${items.length} Products Available`;
+    if (countElem) {
+        countElem.innerText = `${items.length} Products Available`;
+    }
+    if (!grid) return;
     grid.innerHTML = '';
 
     if (items.length === 0) {
@@ -120,15 +121,18 @@ function filterScripts(category) {
 }
 
 // Realtime search listener
-document.getElementById('searchInput').addEventListener('input', applyFilters);
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+}
 
 function applyFilters() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
+    const query = searchInput ? searchInput.value.toLowerCase() : '';
     const filtered = scriptsData.filter(item => {
         let matchesCategory = false;
         if (activeFilter === 'all') matchesCategory = true;
         else if (activeFilter === 'free') matchesCategory = item.isFree === true;
-        else matchesCategory = item.framework.toLowerCase() === activeFilter;
+        else matchesCategory = item.framework.toLowerCase().includes(activeFilter.toLowerCase());
 
         const matchesSearch = item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
         return matchesCategory && matchesSearch;
@@ -149,7 +153,19 @@ function openModal(id) {
     document.getElementById('modalType').innerText = item.type;
     document.getElementById('modalPrice').innerText = item.isFree ? 'FREE' : item.price;
     document.getElementById('modalVideo').href = item.videoUrl;
-    document.getElementById('modalBuyLink').href = item.tebexUrl;
+
+    const buyBtn = document.getElementById('modalBuyLink');
+
+    if (item.packageId) {
+        buyBtn.href = "javascript:void(0);";
+        buyBtn.onclick = (e) => {
+            e.preventDefault();
+            triggerCheckout(item.packageId);
+        };
+    } else {
+        buyBtn.href = item.tebexUrl || "https://lee-verse.tebex.io";
+        buyBtn.onclick = null;
+    }
 
     document.getElementById('detailModal').classList.remove('hidden');
 }
@@ -158,9 +174,44 @@ function closeModal() {
     document.getElementById('detailModal').classList.add('hidden');
 }
 
-document.getElementById('detailModal').addEventListener('click', (e) => {
-    if (e.target.id === 'detailModal') closeModal();
-});
+const detailModalElem = document.getElementById('detailModal');
+if (detailModalElem) {
+    detailModalElem.addEventListener('click', (e) => {
+        if (e.target.id === 'detailModal') closeModal();
+    });
+}
+
+// Tebex Checkout Trigger API
+async function triggerCheckout(packageId) {
+    const buyBtn = document.getElementById('modalBuyLink');
+    const originalText = buyBtn.innerText;
+    buyBtn.innerText = "Connecting to FiveM / Tebex...";
+    buyBtn.style.pointerEvents = "none";
+
+    try {
+        const response = await fetch('/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ packageId: packageId })
+        });
+
+        const data = await response.json();
+
+        if (data && data.checkoutUrl) {
+            window.location.href = data.checkoutUrl;
+        } else {
+            console.error("Tebex API error:", data);
+            alert("Checkout error: " + (data.error || "Failed to create basket"));
+            buyBtn.innerText = originalText;
+            buyBtn.style.pointerEvents = "auto";
+        }
+    } catch (err) {
+        console.error("Fetch checkout error:", err);
+        alert("Server error connecting to Tebex.");
+        buyBtn.innerText = originalText;
+        buyBtn.style.pointerEvents = "auto";
+    }
+}
 
 // Policies & Legal Modals Data & Handler
 const policiesContent = {
@@ -224,42 +275,12 @@ function closePolicyModal() {
     document.getElementById('policyModal').classList.add('hidden');
 }
 
-document.getElementById('policyModal').addEventListener('click', (e) => {
-    if (e.target.id === 'policyModal') closePolicyModal();
-});
+const policyModalElem = document.getElementById('policyModal');
+if (policyModalElem) {
+    policyModalElem.addEventListener('click', (e) => {
+        if (e.target.id === 'policyModal') closePolicyModal();
+    });
+}
 
 // Initial run
 renderScripts(scriptsData);
-
-async function triggerCheckout(packageId) {
-    const buyBtn = document.getElementById('modalBuyLink');
-    buyBtn.onclick = (e) => {
-        e.preventionDefault();
-        triggerCheckout(item.packageId);
-    };
-    const originalText = buyBtn.innerText;
-    buyBtn.innerText = "Connecting to FiveM / Tebex...";
-    buyBtn.style.pointerEvents = "none";
-
-    try {
-        const response = await fetch('/api/checkout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ packageId: packageId })
-        });
-
-        const data = await response.json();
-
-        if (data.checkoutUrl) {
-            window.location.href = data.checkoutUrl;
-        } else {
-            alert("Checkout generation failed. Please try again or reach out on Discord.");
-            buyBtn.innerText = originalText;
-            buyBtn.style.pointerEvents = "auto";
-        }
-    } catch (e) {
-        console.error(e);
-        buyBtn.innerText = originalText;
-        buyBtn.style.pointerEvents = "auto";
-    }
-}
