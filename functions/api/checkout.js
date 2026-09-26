@@ -1,4 +1,11 @@
 export async function onRequestPost(context) {
+    const corsHeaders = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Content-Type": "application/json"
+    };
+
     try {
         const { request, env } = context;
         const body = await request.json();
@@ -7,20 +14,27 @@ export async function onRequestPost(context) {
         if (!packageId) {
             return new Response(JSON.stringify({ error: "Missing packageId" }), {
                 status: 400,
-                headers: { "Content-Type": "application/json" }
+                headers: corsHeaders
             });
         }
+
+        // Tebex Basic Auth: Username is Private Key, Password is empty
+        const authHeader = `Basic ${btoa(env.TEBEX_PRIVATE_KEY.trim() + ":")}`;
 
         // 1. Create Basket with Tebex Headless Checkout API
         const basketRes = await fetch("https://checkout.tebex.io/api/baskets", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Basic ${btoa(env.TEBEX_PROJECT_ID + ":" + env.TEBEX_PRIVATE_KEY)}`
+                "Accept": "application/json",
+                "Authorization": authHeader
             },
             body: JSON.stringify({
                 complete_url: "https://lv-studios-store.pages.dev/?status=success",
-                cancel_url: "https://lv-studios-store.pages.dev/?status=cancel"
+                cancel_url: "https://lv-studios-store.pages.dev/?status=cancel",
+                custom: {
+                    project_id: env.TEBEX_PROJECT_ID || "1574102"
+                }
             })
         });
 
@@ -28,9 +42,12 @@ export async function onRequestPost(context) {
         const basketIdent = basketData?.data?.ident;
 
         if (!basketIdent) {
-            return new Response(JSON.stringify({ error: "Failed to initialize basket", details: basketData }), {
+            return new Response(JSON.stringify({ 
+                error: "Tebex basket initialization failed", 
+                details: basketData 
+            }), {
                 status: 500,
-                headers: { "Content-Type": "application/json" }
+                headers: corsHeaders
             });
         }
 
@@ -39,9 +56,10 @@ export async function onRequestPost(context) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Basic ${btoa(env.TEBEX_PROJECT_ID + ":" + env.TEBEX_PRIVATE_KEY)}`
+                "Accept": "application/json",
+                "Authorization": authHeader
             },
-            body: JSON.stringify({ package_id: packageId })
+            body: JSON.stringify({ package_id: Number(packageId) })
         });
 
         const addData = await addRes.json();
@@ -49,13 +67,23 @@ export async function onRequestPost(context) {
 
         return new Response(JSON.stringify({ checkoutUrl }), {
             status: 200,
-            headers: { "Content-Type": "application/json" }
+            headers: corsHeaders
         });
 
     } catch (err) {
         return new Response(JSON.stringify({ error: err.message }), {
             status: 500,
-            headers: { "Content-Type": "application/json" }
+            headers: corsHeaders
         });
     }
+}
+
+export async function onRequestOptions() {
+    return new Response(null, {
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type"
+        }
+    });
 }
