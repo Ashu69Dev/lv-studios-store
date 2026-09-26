@@ -18,7 +18,7 @@ const scriptsData = [
     {
         id: 2,
         title: "LV-Oxy | Premium Oxy Run Systemp",
-        framework: "qbox, qbcore",
+        framework: "qbox & qbcore",
         type: "Escrow",
         resmon: "0.00ms",
         price: "$12.00",
@@ -32,7 +32,7 @@ const scriptsData = [
     {
         id: 3,
         title: "LB Phone Radio App",
-        framework: "qbx-core, qbox",
+        framework: "qbx-core & qbox",
         type: "Escrow",
         resmon: "0.00ms",
         price: "$0.00",
