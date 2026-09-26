@@ -31,7 +31,7 @@ const scriptsData = [
     },
     {
         id: 3,
-        title: "Dynamic Garage & Impound",
+        title: "LB Phone Radio App",
         framework: "qbx-core, qbox",
         type: "Escrow",
         resmon: "0.00ms",
