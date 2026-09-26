@@ -12,7 +12,7 @@ const scriptsData = [
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
         description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target.Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow.Perfect for realistic economy based RP servers.",
                      
-        videoUrl: "https://www.youtube.com/@LeeVerse5m",
+        videoUrl: "<iframe width="1053" height="592" src="https://www.youtube.com/embed/q6XdlNKYLm4" title="Modern Pawnshop V1 | Qbox &amp; QB-Core | FiveM Pawnshop Script Showcase | Ox Inventory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>",
         tebexUrl: "https://lee-verse.tebex.io"
     },
     {
