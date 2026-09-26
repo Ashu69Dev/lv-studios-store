@@ -15,12 +15,7 @@ body {
         linear-gradient(180deg, #05070B 0%, #080C14 50%, #030508 100%) !important;
     background-attachment: fixed !important;
 }
-#partner {
-    background-image: url("LEE152.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
+
 
 /* Ambient Floating Shapes */
 .ambient-glow {
