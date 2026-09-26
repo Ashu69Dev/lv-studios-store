@@ -12,7 +12,7 @@ const scriptsData = [
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
         description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target. Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow. Perfect for realistic economy based RP servers.",
         videoUrl: "https://youtu.be/q6XdlNKYLm4",
-        tebexUrl: "https://lee-verse.tebex.io"
+        tebexUrl: "https://lee-verse.tebex.io/package/7451197"
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const scriptsData = [
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553318097430257735/system.png?ex=6ab8cfb5&is=6ab77e35&hm=7d26f35a9bd30c54668d64e90a9b30dfc557045c66b0d5b539f20cbbc6b14879&",
         description: "LV-Oxy is a premium-style illegal oxy delivery system built for Qbox & QBCore servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
-        tebexUrl: "https://lee-verse.tebex.io"
+        tebexUrl: "https://lee-verse.tebex.io/package/7454290"
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const scriptsData = [
         image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553315364819959949/phone.png?ex=6ab8cd2a&is=6ab77baa&hm=09c973a505765490a12b3b2847302f869ff7a89a251dc85e384ffb1507917298&",
         description: "Perfect for serious RP servers looking for a clean and stable radio system integrated directly into the phone.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
-        tebexUrl: "https://lee-verse.tebex.io"
+        tebexUrl: "https://lee-verse.tebex.io/package/7451184"
     },
     {
         id: 4,
