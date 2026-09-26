@@ -233,6 +233,10 @@ renderScripts(scriptsData);
 
 async function triggerCheckout(packageId) {
     const buyBtn = document.getElementById('modalBuyLink');
+    buyBtn.onclick = (e) => {
+        e.preventionDefault();
+        triggerCheckout(item.packageId);
+    };
     const originalText = buyBtn.innerText;
     buyBtn.innerText = "Connecting to FiveM / Tebex...";
     buyBtn.style.pointerEvents = "none";
