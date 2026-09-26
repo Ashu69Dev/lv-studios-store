@@ -18,19 +18,10 @@ export async function onRequestPost(context) {
             });
         }
 
-        const projectId = env.TEBEX_PROJECT_ID || "1574102";
+        const projectId = env.TEBEX_PROJECT_ID ? env.TEBEX_PROJECT_ID.trim() : "1574102";
         const privateKey = env.TEBEX_PRIVATE_KEY ? env.TEBEX_PRIVATE_KEY.trim() : "";
 
-        if (!privateKey) {
-            return new Response(JSON.stringify({ 
-                error: "Missing TEBEX_PRIVATE_KEY in Cloudflare Environment Variables" 
-            }), {
-                status: 500,
-                headers: corsHeaders
-            });
-        }
-
-        // Tebex Basket Creation Request
+        // 1. Initialize Tebex Basket
         const basketRes = await fetch("https://checkout.tebex.io/api/baskets", {
             method: "POST",
             headers: {
@@ -39,6 +30,7 @@ export async function onRequestPost(context) {
                 "Authorization": `Basic ${btoa(projectId + ":" + privateKey)}`
             },
             body: JSON.stringify({
+                return_url: "https://lv-studios-store.pages.dev/?status=success",
                 complete_url: "https://lv-studios-store.pages.dev/?status=success",
                 cancel_url: "https://lv-studios-store.pages.dev/?status=cancel"
             })
@@ -48,6 +40,7 @@ export async function onRequestPost(context) {
         const basketIdent = basketData?.data?.ident;
 
         if (!basketIdent) {
+            // Error details return karega taaki exact problem pata chale
             return new Response(JSON.stringify({ 
                 error: "Tebex basket initialization failed", 
                 details: basketData 
@@ -57,7 +50,7 @@ export async function onRequestPost(context) {
             });
         }
 
-        // Add Package to Basket
+        // 2. Add Package to Basket
         const addRes = await fetch(`https://checkout.tebex.io/api/baskets/${basketIdent}/packages`, {
             method: "POST",
             headers: {
