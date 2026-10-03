@@ -9,7 +9,7 @@ const scriptsData = [
         price: "$8.00",
         isFree: false,
         dependencies: "ox_lib, qb-core, qbox",
-        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553294203591721040/pawnshop.png?ex=6ab8b974&is=6ab767f4&hm=af1c60909ab5c593635363ea1e578f3c4cc04432a217efdeca5a21f82569000c&",
+        image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/8d63d690cae16cd7c16fe7d518ca5b1f924c1f17.png",
         description: "Modern Pawnshop V1 is a premium quality pawnshop system designed for Qbox and QB-Core servers using Ox Inventory and Ox Target. Built with a clean modern interface, advanced cart system, illegal item access system, stock handling, NPC interactions, and optimized event flow. Perfect for realistic economy based RP servers.",
         videoUrl: "https://youtu.be/q6XdlNKYLm4",
         tebexUrl: "https://lee-verse.tebex.io/package/7451197"
@@ -23,7 +23,7 @@ const scriptsData = [
         price: "$12.00",
         isFree: false,
         dependencies: "qb-core, qbox",
-        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553318097430257735/system.png?ex=6ab8cfb5&is=6ab77e35&hm=7d26f35a9bd30c54668d64e90a9b30dfc557045c66b0d5b539f20cbbc6b14879&",
+        image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/2e0abd5e5b32ae0a3f15a2e0cf8627f551c369b2.png",
         description: "LV-Oxy is a premium-style illegal oxy delivery system built for Qbox & QBCore servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7454290"
@@ -37,7 +37,7 @@ const scriptsData = [
         price: "$0.00",
         isFree: true,
         dependencies: "qbx-core, qbox",
-        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553315364819959949/phone.png?ex=6ab8cd2a&is=6ab77baa&hm=09c973a505765490a12b3b2847302f869ff7a89a251dc85e384ffb1507917298&",
+        image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/734c425e6ec93a45e9e6b1dc91fe7160042701f6.png",
         description: "Perfect for serious RP servers looking for a clean and stable radio system integrated directly into the phone.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7451184"
@@ -51,7 +51,7 @@ const scriptsData = [
         price: "$9.00",
         isFree: false,
         dependencies: "No framework needed",
-        image: "https://cdn.discordapp.com/attachments/1331303106503376987/1553312941426876546/nametag.png?ex=6ab8cae8&is=6ab77968&hm=b03b8e5b73fece972f5c8fedc306bf59f48d107109c7076058c598a0a804e2e2&",
+        image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/3288b9afd4b8534445b68f52475d4a9c421bbaf0.png",
         description: "This system displays player names along with their server ID above their character, making player identification easy while keeping the roleplay environment immersive and minimalistic. The script also includes a real-time typing indicator, so when a player is typing in chat, a small indicator appears above their nametag. This adds a more interactive and realistic experience for text-based roleplay servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7329365"
@@ -65,7 +65,7 @@ const scriptsData = [
         price: "$24.99",
         isFree: false,
         dependencies: "qbox",
-        image: "https://cdn.discordapp.com/attachments/1532279382230569065/1555871333198467113/LV_Motels__Neon_Motel_Showcase.png?backend=b2&ex=6ac21998&is=6ac0c818&hm=8602453f2a3ad21bd2181ac3995c1a3d6584e31459efb7649178461a595b7af9&",
+        image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/6367337843a077ceb0d858ef66d3fd42f6c1f0d5.png",
         description: "A complete motel system built exclusively for Qbox.LV Motels brings everything you need to create an immersive motel experience for your players.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7712509"
