@@ -55,6 +55,20 @@ const scriptsData = [
         description: "This system displays player names along with their server ID above their character, making player identification easy while keeping the roleplay environment immersive and minimalistic. The script also includes a real-time typing indicator, so when a player is typing in chat, a small indicator appears above their nametag. This adds a more interactive and realistic experience for text-based roleplay servers.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7329365"
+    },
+    {
+        id: 5,
+        title: "LV MOTELS",
+        framework: "QBOX",
+        type: "Open Source",
+        resmon: "0.01ms",
+        price: "$24.99",
+        isFree: false,
+        dependencies: "qbox",
+        image: "https://cdn.discordapp.com/attachments/1532279382230569065/1555871333198467113/LV_Motels__Neon_Motel_Showcase.png?backend=b2&ex=6ac21998&is=6ac0c818&hm=8602453f2a3ad21bd2181ac3995c1a3d6584e31459efb7649178461a595b7af9&",
+        description: "A complete motel system built exclusively for Qbox.LV Motels brings everything you need to create an immersive motel experience for your players.",
+        videoUrl: "https://www.youtube.com/@LeeVerse5m",
+        tebexUrl: "https://lee-verse.tebex.io/package/7712509"
     }
 ];
 
