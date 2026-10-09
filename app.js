@@ -82,7 +82,7 @@ const scriptsData = [
         image: "https://cdn.buymeacoffee.com/uploads/rewards/2025-09-18/1/132538_new_ONE.png@1200w_0e.png",
         description: "Velora is a fully launched, ready-to-play QBCore server built for creators and communities who want to go live instantly.",
         videoUrl: "https://www.youtube.com/watch?v=GgBbCrz9JTs",
-        buyMeACoffeeUrl: "https://buymeacoffee.com/leeverse/e/457484"
+        buymeacoffeeUrl: "https://buymeacoffee.com/leeverse/e/457484"
     }
 ];
 
@@ -185,6 +185,14 @@ function openModal(id) {
     const buyBtn = document.getElementById('modalBuyLink');
     buyBtn.innerText = item.isFree ? "DOWNLOAD FREE" : "GET SCRIPT";
     buyBtn.href = item.tebexUrl;
+    buyBtn.target = "_blank";
+    buyBtn.onclick = null; // Purana API event handler clear
+
+    document.getElementById('detailModal').classList.remove('hidden');
+
+    const buyBtn = document.getElementById('modalBuyLink');
+    buyBtn.innerText = item.isFree ? "DOWNLOAD FREE" : "GET SCRIPT";
+    buyBtn.href = item.buymeacoffeeUrl;
     buyBtn.target = "_blank";
     buyBtn.onclick = null; // Purana API event handler clear
 
