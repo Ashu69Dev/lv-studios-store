@@ -70,20 +70,22 @@ const scriptsData = [
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7712509"
     }
-    
+
 ];
+
+
 // Prebuilt server inventory — add each server as an object in this array.
 // Keep server listings separate from scriptsData so they can be managed independently.
 const serversData = [
     {
         id: 1,
-        title: "VELORA",
+        title: "Prebuilt QBCore RP Server",
         framework: "QBCore",
-        price: "$155",
-        image: "https://cdn.buymeacoffee.com/uploads/rewards/2025-09-18/1/132538_new_ONE.png@1200w_0e.png",
-        description: "Velora is a fully launched, ready-to-play QBCore server built for creators and communities who want to go live instantly.",
-        features: ["20+ NEW JOBS", "HEISTS & ROBERY", "Optimized resources"],
-        storeUrl: ""
+        price: "$99.00",
+        image: "https://your-image-url.example/server.png",
+        description: "A ready-to-deploy roleplay server package.",
+        features: ["Configured jobs", "Optimized resources", "Setup guide"],
+        storeUrl: "https://your-store-link.example"
     }
 ];
 
@@ -373,6 +375,7 @@ async function triggerCheckout(packageId) {
 }
 // Initial run
 renderScripts(scriptsData);
+renderServers(serversData);
 // Hire Dev Category Tab Switcher
 function switchServiceTab(tabName) {
     // Hide all service panels
