@@ -176,7 +176,7 @@ function openModal(id) {
     buyBtn.onclick = null; // Purana API event handler clear
 
     document.getElementById('detailModal').classList.remove('hidden');
-
+}
 function closeModal() {
     document.getElementById('detailModal').classList.add('hidden');
 }
