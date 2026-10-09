@@ -86,7 +86,7 @@ const serversData = [
         description: "Velora is a fully launched, ready-to-play QBCore server built for creators and communities who want to go live instantly.",
         features: ["20+ NEW JOBS", "HEISTS & ROBERY", "OPTIMISED SCRIPTS"],
         videoUrl: "https://www.youtube.com/watch?v=GgBbCrz9JTs",
-        storeUrl: "https://your-store-link.example"
+        storeUrl: "https://discord.com/invite/pbUQCPapH2"
     }
 ];
 
