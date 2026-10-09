@@ -87,6 +87,17 @@ const serversData = [
         features: ["20+ NEW JOBS", "HEISTS & ROBERY", "OPTIMISED SCRIPTS"],
         videoUrl: "https://www.youtube.com/watch?v=GgBbCrz9JTs",
         storeUrl: "https://discord.com/invite/pbUQCPapH2"
+    },
+    {
+        id: 2,
+        title: "ORBIT",
+        framework: "QBOX",
+        price: "$175.00",
+        image: "https://cdn.buymeacoffee.com/uploads/rewards/2026-06-10/1/115836_ChatGPT_Image_Jun_10_2026_04_07_39_PM.png@1200w_0e.png",
+        description: "ORBIT V1.0 is a complete roleplay package built for server owners who want to launch quickly with premium features, balanced economy, immersive jobs, advanced criminal activities, and modern UI systems.",
+        features: ["POLICE", "HEISTS ", "CUSTOM CARS", "DRUGS"],
+        videoUrl: "https://www.youtube.com/watch?v=iY3hPsynv1s",
+        storeUrl: "https://discord.com/invite/pbUQCPapH2"
     }
 ];
 
