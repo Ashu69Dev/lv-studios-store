@@ -69,21 +69,8 @@ const scriptsData = [
         description: "A complete motel system built exclusively for Qbox.LV Motels brings everything you need to create an immersive motel experience for your players.",
         videoUrl: "https://www.youtube.com/@LeeVerse5m",
         tebexUrl: "https://lee-verse.tebex.io/package/7712509"
-    },
-    {
-        id: 6,
-        title: "VELORA",
-        framework: "qbcore",
-        type: "Open Source",
-        resmon: "0.01ms",
-        price: "$155",
-        isFree: false,
-        dependencies: "qb-core",
-        image: "https://cdn.buymeacoffee.com/uploads/rewards/2025-09-18/1/132538_new_ONE.png@1200w_0e.png",
-        description: "Velora is a fully launched, ready-to-play QBCore server built for creators and communities who want to go live instantly.",
-        videoUrl: "https://www.youtube.com/watch?v=GgBbCrz9JTs",
-        buymeacoffeeUrl: "https://buymeacoffee.com/leeverse/e/457484"
     }
+    
 ];
 
 let activeFilter = 'all';
@@ -190,14 +177,7 @@ function openModal(id) {
 
     document.getElementById('detailModal').classList.remove('hidden');
 
-    const buyBtn = document.getElementById('modalBuyLink');
-    buyBtn.innerText = item.isFree ? "DOWNLOAD FREE" : "GET SCRIPT";
-    buyBtn.href = item.buymeacoffeeUrl;
-    buyBtn.target = "_blank";
-    buyBtn.onclick = null; // Purana API event handler clear
-
-    document.getElementById('detailModal').classList.remove('hidden');
-}
+   
 
 function closeModal() {
     document.getElementById('detailModal').classList.add('hidden');
