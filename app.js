@@ -77,13 +77,13 @@ const scriptsData = [
 const serversData = [
     {
         id: 1,
-        title: "Prebuilt QBCore RP Server",
+        title: "VELORA",
         framework: "QBCore",
-        price: "$99.00",
-        image: "https://your-image-url.example/server.png",
-        description: "A ready-to-deploy roleplay server package.",
-        features: ["Configured jobs", "Optimized resources", "Setup guide"],
-        storeUrl: "https://your-store-link.example"
+        price: "$155",
+        image: "https://cdn.buymeacoffee.com/uploads/rewards/2025-09-18/1/132538_new_ONE.png@1200w_0e.png",
+        description: "Velora is a fully launched, ready-to-play QBCore server built for creators and communities who want to go live instantly.",
+        features: ["20+ NEW JOBS", "HEISTS & ROBERY", "Optimized resources"],
+        storeUrl: "https://buymeacoffee.com/leeverse/e/457484"
     }
 ];
 
