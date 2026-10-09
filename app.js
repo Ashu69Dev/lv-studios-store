@@ -67,7 +67,7 @@ const scriptsData = [
         dependencies: "qbox",
         image: "https://dunb17ur4ymx4.cloudfront.net/packages/images/6367337843a077ceb0d858ef66d3fd42f6c1f0d5.png",
         description: "A complete motel system built exclusively for Qbox.LV Motels brings everything you need to create an immersive motel experience for your players.",
-        videoUrl: "https://www.youtube.com/@LeeVerse5m",
+        videoUrl: "https://youtu.be/vxnKkCFMMxI",
         tebexUrl: "https://lee-verse.tebex.io/package/7712509"
     }
 
