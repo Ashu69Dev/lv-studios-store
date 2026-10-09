@@ -177,8 +177,6 @@ function openModal(id) {
 
     document.getElementById('detailModal').classList.remove('hidden');
 
-   
-
 function closeModal() {
     document.getElementById('detailModal').classList.add('hidden');
 }
