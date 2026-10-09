@@ -72,6 +72,57 @@ const scriptsData = [
     }
     
 ];
+// Prebuilt server inventory — add each server as an object in this array.
+// Keep server listings separate from scriptsData so they can be managed independently.
+const serversData = [
+    {
+        id: 1,
+        title: "Prebuilt QBCore RP Server",
+        framework: "QBCore",
+        price: "$99.00",
+        image: "https://your-image-url.example/server.png",
+        description: "A ready-to-deploy roleplay server package.",
+        features: ["Configured jobs", "Optimized resources", "Setup guide"],
+        storeUrl: "https://your-store-link.example"
+    }
+];
+
+function renderServers(items) {
+    const grid = document.getElementById('serversGrid');
+    const count = document.getElementById('serverCount');
+    if (!grid) return;
+    if (count) count.textContent = `${items.length} ${items.length === 1 ? 'Server' : 'Servers'} Available`;
+    grid.innerHTML = '';
+
+    if (items.length === 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-12 px-4 rounded-xl border border-white/10 bg-[#0C1017] text-slate-400 text-sm">No prebuilt servers listed yet. Add server products to <code class="text-[#00E5FF]">serversData</code> in <code class="text-[#00E5FF]">app.js</code>.</div>`;
+        return;
+    }
+
+    items.forEach(server => {
+        const card = document.createElement('article');
+        card.className = 'glass-box rounded-xl overflow-hidden flex flex-col justify-between';
+        const features = Array.isArray(server.features) ? server.features : [];
+        card.innerHTML = `
+            <div>
+                <div class="h-44 w-full relative overflow-hidden bg-slate-900">
+                    <img src="${server.image || ''}" alt="${server.title}" class="w-full h-full object-cover" loading="lazy">
+                    <span class="absolute top-2.5 left-2.5 bg-[#05070B]/90 border border-white/10 text-white text-[10px] px-2 py-0.5 rounded uppercase font-rajdhani font-bold tracking-wider">${server.framework || 'FiveM'}</span>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/20 px-2 py-0.5 rounded font-rajdhani uppercase font-bold tracking-wider inline-block mb-2">Prebuilt Server</span>
+                    <h3 class="text-lg font-bold font-rajdhani uppercase text-white tracking-wide mb-1">${server.title}</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">${server.description || ''}</p>
+                    ${features.length ? `<ul class="text-xs text-slate-300 space-y-1 mb-2">${features.map(feature => `<li><i class="fas fa-check text-[#00E5FF] mr-2"></i>${feature}</li>`).join('')}</ul>` : ''}
+                </div>
+            </div>
+            <div class="p-4 pt-0 border-t border-white/5 flex items-center justify-between mt-auto">
+                <div><span class="text-[10px] uppercase font-rajdhani font-bold text-slate-500 block">Price</span><span class="text-lg font-mono font-bold text-white">${server.price || 'Contact us'}</span></div>
+                <a href="${server.storeUrl || 'https://discord.gg/pbUQCPapH2'}" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 rounded-lg border border-[#0099FF]/30 text-[#0099FF] hover:bg-[#0099FF] hover:text-white text-xs font-bold font-rajdhani uppercase tracking-wider transition">View Server →</a>
+            </div>`;
+        grid.appendChild(card);
+    });
+}
 
 let activeFilter = 'all';
 
